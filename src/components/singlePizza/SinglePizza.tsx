@@ -7,6 +7,7 @@ import EditPizzaForm from "../../editPizzaForm/EditPizzaForm";
 interface SinglePizzaProps {
     pizza: Pizza,
     updatePizza: (newPizza:Pizza)=>void,
+    deletePizza: (id: number) => void,
 }
 
 
@@ -18,6 +19,12 @@ const SinglePizza: FC<SinglePizzaProps> = (props) => {
         setEdit(!edit)
     }
 
+    const handleDelete = () =>{
+        props.deletePizza(props.pizza.id)
+    }
+
+
+
     return (
         <div className="pizza">
             <img src={`/images/${props.pizza.img}`} alt={props.pizza.title}/>
@@ -25,7 +32,7 @@ const SinglePizza: FC<SinglePizzaProps> = (props) => {
             <span>{props.pizza.price} ₽</span>
             <div className="pizza-controls">
                 <AiFillEdit onClick={handleToggleEdit}/>
-                <AiFillDelete/>
+                <AiFillDelete onClick={handleDelete}/>
             </div>
             {edit
             ? <EditPizzaForm data={props.pizza} updatePizza={props.updatePizza} handleToggleEdit={handleToggleEdit}/>:null}
