@@ -35,7 +35,7 @@ const HomeFeature: FC = () => {
         if (pizzasState) {
             setPizzasList(JSON.parse(pizzasState))
         }
-    }, [pizzasList])
+    }, [])
 
     return (
         <div className="App">

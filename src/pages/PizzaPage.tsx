@@ -1,10 +1,9 @@
 import {FC} from "react";
+import PizzaFeature from "../features/PizzaFeature";
 
 const PizzaPage: FC = () => {
     return (
-        <div>
-            <h2>Pizza page</h2>
-        </div>
+            <PizzaFeature/>
     )
 }
 

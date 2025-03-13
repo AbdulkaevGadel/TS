@@ -2,6 +2,7 @@ import React, {FC, useState} from "react";
 import Pizza from "../../models/Pizza";
 import {AiFillDelete, AiFillEdit} from "react-icons/ai";
 import EditPizzaForm from "../../editPizzaForm/EditPizzaForm";
+import {Link} from "react-router-dom";
 
 
 interface SinglePizzaProps {
@@ -28,7 +29,11 @@ const SinglePizza: FC<SinglePizzaProps> = (props) => {
     return (
         <div className="pizza">
             <img src={`/images/${props.pizza.img}`} alt={props.pizza.title}/>
-            <h2>{props.pizza.title} </h2>
+            <h2>
+            <Link to={`/pizza/${props.pizza.id}`}>
+            {props.pizza.title}
+            </Link>
+            </h2>
             <span>{props.pizza.price} ₽</span>
             <div className="pizza-controls">
                 <AiFillEdit onClick={handleToggleEdit}/>
