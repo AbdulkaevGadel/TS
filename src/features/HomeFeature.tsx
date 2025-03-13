@@ -28,7 +28,6 @@ const HomeFeature: FC = () => {
         localStorage.setItem('pizzasState', JSON.stringify(newPizzasList))
     }
 
-    console.log(pizzasList)
 
     useEffect(() => {
         const pizzasState = localStorage.getItem('pizzasState')

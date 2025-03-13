@@ -4,8 +4,8 @@ import Pizza from "../models/Pizza";
 
 interface EditPizzaFormProps {
     data: Pizza;
-    updatePizza: (newPizza:Pizza)=>void,
-    handleToggleEdit: ()=>void
+    updatePizza: (newPizza: Pizza) => void,
+    handleToggleEdit: () => void
 }
 
 
@@ -32,9 +32,6 @@ const EditPizzaForm: FC<EditPizzaFormProps> = (props) => {
             props.handleToggleEdit()
         }
     }
-
-    console.log(editPizza)
-
 
     return (
         <form onSubmit={handleSubmit} className="edit-form">

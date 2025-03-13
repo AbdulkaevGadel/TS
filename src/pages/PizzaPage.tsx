@@ -3,7 +3,7 @@ import PizzaFeature from "../features/PizzaFeature";
 
 const PizzaPage: FC = () => {
     return (
-            <PizzaFeature/>
+        <PizzaFeature/>
     )
 }
 

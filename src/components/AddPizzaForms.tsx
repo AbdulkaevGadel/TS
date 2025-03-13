@@ -3,7 +3,7 @@ import "./styles.css"
 import Pizza from "../models/Pizza";
 
 interface AddPizzaFormProps {
-    addPizza: (newPizza:Pizza) =>void;
+    addPizza: (newPizza: Pizza) => void;
 }
 
 
@@ -31,17 +31,14 @@ const AddPizzaForms: FC<AddPizzaFormProps> = (props) => {
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
         e.preventDefault();
-        const {title,price,img}=newPizza;
-        if(title&&price&&img){
+        const {title, price, img} = newPizza;
+        if (title && price && img) {
             props.addPizza({
-                title,price:Number(price),img,id: Date.now()
+                title, price: Number(price), img, id: Date.now()
             })
         }
         setPizza(initState)
     }
-
-    console.log(newPizza)
-
 
     return (
         <form onSubmit={handleSubmit}>
